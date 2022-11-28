@@ -36,7 +36,7 @@ on pc.category_id=c.category_id
 ```
 ![](image/rightjoin.png)
 ---
-
+##
 # Left Join
 ```sh
 Select * from products p
@@ -47,3 +47,4 @@ on pc.category_id=c.category_id
 ```
 ![](image/leftjoin.png)
 ---
+
