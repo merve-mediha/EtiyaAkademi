@@ -14,6 +14,7 @@ INSERT INTO users ( email, phone, name) VALUES ( 'veysel@icloud.com', '5678', 'v
 
 ## Join yapıları
 ---
+
 # Inner Join
 ```sh
 Select * from products p
@@ -24,6 +25,7 @@ on pc.category_id=c.category_id
 ```
 ![](image/innerjoin.png)
 ---
+
 # Right Join
 ```sh
 Select * from products p
@@ -34,6 +36,7 @@ on pc.category_id=c.category_id
 ```
 ![](image/rightjoin.png)
 ---
+
 # Left Join
 ```sh
 Select * from products p
