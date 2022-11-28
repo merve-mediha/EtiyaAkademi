@@ -140,4 +140,5 @@ on co.country_id=a.country_id
 group by c.name, u.name
 having c.name = Lower('Ankara') 
 ```
+#### Çıktısı:
 ![image](https://user-images.githubusercontent.com/103939400/204352519-07ae25f5-c96d-48f8-9ae5-c15da83da742.png)
