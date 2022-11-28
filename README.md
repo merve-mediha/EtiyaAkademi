@@ -1,15 +1,16 @@
 # EtiyaCamp
-![](image/users.png)
+
 ```sh
 Select * from users
 ```
-<img></img>
+![](image/users.png)
 
 ##Insert Into
 ```sh
 INSERT INTO users ( email, phone, name) VALUES ( 'ismail@gmail.com', '151617', 'ismail');
 INSERT INTO users ( email, phone, name) VALUES ( 'veysel@icloud.com', '5678', 'veysel');
 ```
+![](image/insert users.png)
 
 ##Join yapıları
 ---
