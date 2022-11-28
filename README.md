@@ -1,4 +1,4 @@
-# EtiyaCamp
+# 28.11.2022 SQL Homework
 
 ```sh
 Select * from users
