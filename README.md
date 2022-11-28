@@ -110,4 +110,22 @@ where c.name in ('ankara') and co.name in ('türkiye')
 ```
 #### Çıktısı:
 ![](image/in.png)
+---
+##
+##
+## Group By
+```sh
+Select c.name as "kategori adı",Sum(p.stock) as "kategorideki stok adedi" from products p
+inner join products_categories pc
+on p.product_id=pc.product_id
+inner join categories c
+on pc.category_id=c.category_id
+group by c.name 
+```
+#### Çıktısı:
+![](image/groupby.png)
+---
+##
+##
+
 
