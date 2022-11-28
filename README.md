@@ -127,5 +127,17 @@ group by c.name
 ---
 ##
 ##
-
-
+## Having 
+```sh
+select u.name as "Kullanıcının adı",
+c.name as "Şehri" from users u
+inner join adresses a 
+on u.user_id=a.user_id
+inner join cities c
+on a.city_id=c.city_id
+inner join countries co 
+on co.country_id=a.country_id
+group by c.name, u.name
+having c.name = Lower('Ankara') 
+```
+![image](https://user-images.githubusercontent.com/103939400/204352519-07ae25f5-c96d-48f8-9ae5-c15da83da742.png)
