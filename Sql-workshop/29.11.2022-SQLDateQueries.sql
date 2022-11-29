@@ -86,6 +86,9 @@ Select Date_Part('day','2022-11-29 22:00'::timestamp - '2022-11-28 21:00'::times
    -- SON DATABASE TASK
 -- veritabanınızda eksik ise date ve timestamp eksik ise alanları ekleyip 
 -- bu alanların kullandığımız örneklere benzer 10 adet query ile örneklendirilmesi
+       
+      -----------------------------------------
+       ## WORKSHOP
 	   
 	 
 -- Query 1 : Yaşı 20-30 arasındaki müşterileri listele.
