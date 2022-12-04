@@ -64,7 +64,7 @@ List<User> findByNameOrBirthDateAndActive(String name, ZonedDateTime birthDate, 
 ```
 ------------------------------------
 Sıralamalar için OrderBy ifadesinden yararlanırız.Varsayılan seçenek artan düzendir, yani Asc. Bunun tersi için ifadenin sonuna Desc ekleyebiliriz. 
-  ```sh
+```sh
 List<User> findByNameOrderByNameAsc(String name);
   List<User> findByNameOrderByNameDesc(String name);
 ```
