@@ -80,4 +80,16 @@ DTO kullanım amacına örnek olarak bazen verilerimizi veritabanında sakladı�
 -------------------------------------
 ------------------------------------------
 
-# ✨ JPQL
+# ✨ JPQL(Java Persistence Query Language) 
+JPA standardının Entity nesnelerini sorgulamak üzerine tanımladığı bir dildir. JPQL, HQL (Hibernate Query Language) ‘e fazlasıyla benzeşir. Bu diller SQL (Structured Query Language) diline hemen hemen benzemelerine karşın, kullandığı argümanlar veritabanı tabloları yerine Entity nesneleridir.
+
+Bir durumu yerine getimek için bazen özel bir soruya ihtiyaç duyabiliriz. Bu durumlarda sorgular repository içinde @Query anotasyonun açıklaması içine yazılır.@Query anotasyonu JPQL'i kullanır.
+```sh
+@Query("SELECT u FROM User u WHERE u.status = 1")
+Collection<User> findAllActiveUsers();
+```
+Sorguyu yerel SQL sorgusu şeklinde çalıştırmak için sorgunun yanına nativeQuery=true özelliğini ekleriz.Böylelikle sorgular SQL'de nasıl kullanıyorsak öyle yazılabilir.
+```sh
+@Query(value = "SELECT * FROM Employee ORDER BY name", nativeQuery = true)
+ public List<Employee> findAllSortedByNameUsingNative();
+   ```
