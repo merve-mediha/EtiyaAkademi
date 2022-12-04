@@ -1,4 +1,4 @@
-# JPA Repository
+# ✨ JPA Repository
 JPA(Java Persistence API) nesnelerin ilişkilendirilmesini sağlayan uygulama sonlandıktan sonra bile verinin kalıcı olmasını sağlayan teknolojidir. JPA sayesinde nesne ilişkileriyle yaptığımız sql komutlarını direkt olarak nesne üzerinde çalıştırabiliriz.JPa bu sorguları içersinde barındırır ve bu sayede veritabanında verileri saklama güncelleme, veri çekme veya map işlemi yapabiliriz.
 JPA , uygulama ile veritabanı arasında arabirim noktasını oluşturur.
 ----------------------------------------------------------------------------
@@ -12,7 +12,8 @@ Verdiğimiz isim dışındakileri aramaz için ise
 List<User> findByNameIsNot(String name);
 ```
 sorgulara is koşulundan sonra null veya nutnull ekleyerek ise o özelliği olmayan verileri de getirebiliriz.
-------
+
+----------------------
 Yinelemeleri kaldırmak için distinct veya sonuç küme sınıflandırmaları için ise first, top anahtar kelimelerini kullanabiliriz.
 
 ```sh
@@ -39,7 +40,8 @@ List<User> findByNameLike(String likePattern);
 userRepository.findByNameLike(likePattern);
 ```
 kodlarını ekleyebiliriz.
-----------------------------------------
+
+--------------------------------------------
 Karşılaştırmalar için <, <=, >, => operatörleri yerine LessThan, LessThanEqual, GreaterThan, GreaterThanEqual anahtar kelimeleri kullanılabilir.
 ```sh
 List<User> findByAgeLessThanEqual(Integer age);
