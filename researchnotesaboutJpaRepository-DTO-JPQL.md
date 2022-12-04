@@ -93,3 +93,61 @@ Sorguyu yerel SQL sorgusu şeklinde çalıştırmak için sorgunun yanına nativ
 @Query(value = "SELECT * FROM Employee ORDER BY name", nativeQuery = true)
  public List<Employee> findAllSortedByNameUsingNative();
    ```
+   -------
+ Pagination yani sayfalandırma yöntemini kullanmak için Page jeneriği ile nesnemizi alarak method oluştururuz. Sayfa bilsi için ise PageRequest parametresi yazabiliriz.
+```sh 
+ @Query(value = "SELECT u FROM User u ORDER BY id")
+Page<User> findAllUsersWithPagination(Pageable pageable);
+```
+Native query için sayfalama;
+```sh 
+@Query(
+  value = "SELECT * FROM Users ORDER BY id", 
+  countQuery = "SELECT count(*) FROM Users", 
+  nativeQuery = true)
+Page<User> findAllUsersWithPagination(Pageable pageable);
+```
+-----------------------------------------------------------
+JPQL Query ile aranan parametrenin method parametresi ile eşleşmedi için @Param anotasyonu eklemeliyiz. Ama yöntem parametresi ile ':' ile yazılan sorgu parametresinin aynı olmasına özen göstermeliyiz.
+```sh 
+@Query("SELECT u FROM User u WHERE u.status = :status and u.name = :name")
+User findUserByStatusAndNameNamedParams(
+  @Param("status") Integer status, 
+  @Param("name") String userName);
+  ```
+ Native query ile;
+ ```sh
+@Query("SELECT u FROM User u WHERE u.status = :status and u.name = :name")
+User findUserByUserStatusAndUserName(@Param("status") Integer userStatus, 
+  @Param("name") String userName);
+```
+------------------------------------------------------------------
+---------------------------------------------------------------------
+```sh
+SELECT u FROM User u WHERE u.name IN :names
+```
+yukarıdaki sorguyu liste olarak aramak için koleksiyon jeneriğinden yararlanabiliriz.
+```sh
+@Query(value = "SELECT u FROM User u WHERE u.name IN :names")
+List<User> findUserByNameList(@Param("names") Collection<String> names);
+```
+--------------------------------------------------------------
+-------------------------------------------------------------
+verileri değiştirmek, güncellemek için ise  @Modifying anotasyonu kullanırız. Ayrıca sorguda select yerine de update kullanmalıyız.
+```sh
+@Modifying
+@Query("update User u set u.status = :status where u.name = :name")
+int updateUserSetStatusForName(@Param("status") Integer status, 
+  @Param("name") String name);
+```
+Dönen değer ile kaç satırın güncellendiğini anlarız. 
+Veri ekleme işlemi için de hem @Modifying anotasyonu olmalı hem de sql deki gibi isnert into ile başlayan sorgumuz yazılmalıdır.
+```sh
+@Modifying
+@Query(
+  value = 
+    "insert into Users (name, age, email, status) values (:name, :age, :email, :status)",
+  nativeQuery = true)
+void insertUser(@Param("name") String name, @Param("age") Integer age, 
+  @Param("status") Integer status, @Param("email") String email);
+  ```
