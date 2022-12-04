@@ -58,7 +58,7 @@ List<User> findByBirthDateBefore(ZonedDateTime birthDate);
 -------------------------------------------
 Ayrıca birden fazla özellik için koşul arıyorsak And ve Or anahtar kelimesi kullanabiliriz.
 İkisi aynı sorguda kullanılıyorsa öncelik sırası and sonra or şeklinde çalışır.
-
+```sh
 List<User> findByNameOrBirthDate(String name, ZonedDateTime birthDate);
 List<User> findByNameOrBirthDateAndActive(String name, ZonedDateTime birthDate, Boolean active);
 ```
