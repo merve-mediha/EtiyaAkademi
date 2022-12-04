@@ -72,3 +72,12 @@ List<User> findByNameOrderByNameAsc(String name);
 ```
 ------------------------------------------------------------------------------------------
 -----------------------------------
+# ✨ DTO(Data Transfer Object)
+Veri akatarım nesneleri adından anlaşılacağı gibi katmanlar, birimler arasında sadece veri aktarımı için kullanılırlar.Depolama dışında herhangi bir yükümlülükleri yoktur. Setter/getter kullanmına gerek yoktur. Tüm veriler public olarak tutulabilir.
+DTO da asıl amaç katmanları arasındaki yapılabilecek call yani çağrım sayılarını azaltmaktır. Bir katmanda elimizde var olan data diğer katmanda kullanılacak ise, veriyi tasımak diğer katmanda yeniden çağrım yapmamak için anlamlı bir çözümdür. Ve Dto'lar nerdeyse hiç davranış içermezler. Veriyi olduğu gibi ileten Dumb objelerdir.
+DTO kullanım amacına örnek olarak bazen verilerimizi veritabanında sakladığımız gibi göstermek istemeyebiliriz. Mesela veritabanında bir müşterinin adını ve soyadını farklı alanlarda tutup, UI’da birleşik göstermek için DTO sınıfları oluştururuz yada bir tablonun CRUD işlemleri için farklı DTO’lar oluşturabiliriz.
+
+-------------------------------------
+------------------------------------------
+
+# ✨ JPQL
