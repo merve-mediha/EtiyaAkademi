@@ -1,7 +1,7 @@
 # ✨ JPA Repository
 JPA(Java Persistence API) nesnelerin ilişkilendirilmesini sağlayan uygulama sonlandıktan sonra bile verinin kalıcı olmasını sağlayan teknolojidir. JPA sayesinde nesne ilişkileriyle yaptığımız sql komutlarını direkt olarak nesne üzerinde çalıştırabiliriz.JPa bu sorguları içersinde barındırır ve bu sayede veritabanında verileri saklama güncelleme, veri çekme veya map işlemi yapabiliriz.
 JPA , uygulama ile veritabanı arasında arabirim noktasını oluşturur.
-----------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
 ## JPA Repository ile Türetilmiş Sorgu Yöntemleri
   By anahtar sözcüğüyle ayırılmış iki ana bölümü içeren JPA sorgularında ilk kısım 'find' gibi işlevi belirtir 'By' anahtar kelimesinden sonraki kısım ise ölçütü belirtir. Ölçüt bölümü ise veriye özelliğinde olan koşul ifadesini içerir.
 ```sh
@@ -72,6 +72,8 @@ List<User> findByNameOrderByNameAsc(String name);
 ```
 ------------------------------------------------------------------------------------------
 -----------------------------------
+------------------------------------------------------------------------------------------
+-----------------------------------
 # ✨ DTO(Data Transfer Object)
 Veri akatarım nesneleri adından anlaşılacağı gibi katmanlar, birimler arasında sadece veri aktarımı için kullanılırlar.Depolama dışında herhangi bir yükümlülükleri yoktur. Setter/getter kullanmına gerek yoktur. Tüm veriler public olarak tutulabilir.
 DTO da asıl amaç katmanları arasındaki yapılabilecek call yani çağrım sayılarını azaltmaktır. Bir katmanda elimizde var olan data diğer katmanda kullanılacak ise, veriyi tasımak diğer katmanda yeniden çağrım yapmamak için anlamlı bir çözümdür. Ve Dto'lar nerdeyse hiç davranış içermezler. Veriyi olduğu gibi ileten Dumb objelerdir.
@@ -79,6 +81,8 @@ DTO kullanım amacına örnek olarak bazen verilerimizi veritabanında sakladı�
 
 -------------------------------------
 ------------------------------------------
+------------------------------------------------------------------------------------------
+-----------------------------------
 
 # ✨ JPQL(Java Persistence Query Language) 
 JPA standardının Entity nesnelerini sorgulamak üzerine tanımladığı bir dildir. JPQL, HQL (Hibernate Query Language) ‘e fazlasıyla benzeşir. Bu diller SQL (Structured Query Language) diline hemen hemen benzemelerine karşın, kullandığı argümanlar veritabanı tabloları yerine Entity nesneleridir.
